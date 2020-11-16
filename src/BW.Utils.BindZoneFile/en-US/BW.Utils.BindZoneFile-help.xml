@@ -1,0 +1,1521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-BindRecordToZone</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>BindRecordToZone</command:noun>
+      <maml:description>
+        <maml:para>Add a Bind record to a Bind zone object</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Add a Bind record to a Bind zone object</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-BindRecordToZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Zone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to modify.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+          <maml:name>Record</maml:name>
+          <maml:Description>
+            <maml:para>The record(s) to add to the zone.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>After</maml:name>
+          <maml:Description>
+            <maml:para>Causes the added record(s) to be inserted after the record supplied to this parameter.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Pass through the record(s) to the pipeline for further manipulation.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Add-BindRecordToZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Zone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to modify.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+          <maml:name>Record</maml:name>
+          <maml:Description>
+            <maml:para>The record(s) to add to the zone.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AtIndex</maml:name>
+          <maml:Description>
+            <maml:para>Causes the added record(s) to be inserted at the index supplied to this parameter.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Pass through the record(s) to the pipeline for further manipulation.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Add-BindRecordToZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Zone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to modify.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+          <maml:name>Record</maml:name>
+          <maml:Description>
+            <maml:para>The record(s) to add to the zone.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Before</maml:name>
+          <maml:Description>
+            <maml:para>Causes the added record(s) to be inserted before the record supplied to this parameter.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Pass through the record(s) to the pipeline for further manipulation.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>After</maml:name>
+        <maml:Description>
+          <maml:para>Causes the added record(s) to be inserted after the record supplied to this parameter.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AtIndex</maml:name>
+        <maml:Description>
+          <maml:para>Causes the added record(s) to be inserted at the index supplied to this parameter.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Before</maml:name>
+        <maml:Description>
+          <maml:para>Causes the added record(s) to be inserted before the record supplied to this parameter.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:Description>
+          <maml:para>Pass through the record(s) to the pipeline for further manipulation.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+        <maml:name>Record</maml:name>
+        <maml:Description>
+          <maml:para>The record(s) to add to the zone.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Zone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to modify.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>BindRecord[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>BindRecord[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Zone = Import-BindZone '.\contoso.com.zone'
+PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1'</dev:code>
+        <dev:remarks>
+          <maml:para>Appends a www record to the end of the zone.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Zone = Import-BindZone '.\contoso.com.zone'
+PS C:\&gt; $MxRecord = $Zone | Where-Object RecordType -eq MX | Select-Object -First 1
+PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Before $MxRecord</dev:code>
+        <dev:remarks>
+          <maml:para>Adds a new A record before the first MX record.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Export-BindZone</command:name>
+      <command:verb>Export</command:verb>
+      <command:noun>BindZone</command:noun>
+      <maml:description>
+        <maml:para>Export a Bind zone object to a zone file</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Export a Bind zone object to a zone file</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Export-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Zone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to export.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>Path to export the zone to.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>Path to export the zone to.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Zone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to export.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Void</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Export-BindZone -Zone $Zone -Path '.\contoso.com.zone'</dev:code>
+        <dev:remarks>
+          <maml:para>Exports a Bind zone to a zone file</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Import-BindZone</command:name>
+      <command:verb>Import</command:verb>
+      <command:noun>BindZone</command:noun>
+      <maml:description>
+        <maml:para>Import a Bind zone file to a zone object</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Import a Bind zone file to a zone object</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Import-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:Description>
+            <maml:para>The literal path to the zone file.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Import-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>The literal path to the zone file.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+        <maml:name>LiteralPath</maml:name>
+        <maml:Description>
+          <maml:para>The literal path to the zone file.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>The literal path to the zone file.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>BindZone[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Zone = Import-BindZone '.\contoso.com.zone'</dev:code>
+        <dev:remarks>
+          <maml:para>Import the contoso.com.zone file to a zone object.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Invoke-BindZoneSort</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>BindZoneSort</command:noun>
+      <maml:description>
+        <maml:para>Invoke the Sort method on the BindZone object</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Invoke the Sort method on the BindZone object. This cmdlet exists just to make sorting more discoverable. You can also just call $Zone.Sort() for the same result.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-BindZoneSort</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Zone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to sort.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Zone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to sort.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Void</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Invoke-BindZoneSort -Zone $Zone</dev:code>
+        <dev:remarks>
+          <maml:para>Sort the zone object passed.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-BindRecord</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>BindRecord</command:noun>
+      <maml:description>
+        <maml:para>Create a new bind record object</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a new bind record object from a string or parameters.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-BindRecord</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>BindZone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to append the record to.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Comment</maml:name>
+          <maml:Description>
+            <maml:para>A commend for the record.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>HostName</maml:name>
+          <maml:Description>
+            <maml:para>The host name of the record.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RecordClass</maml:name>
+          <maml:Description>
+            <maml:para>The record class of the record.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RecordData</maml:name>
+          <maml:Description>
+            <maml:para>The record data of the record.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RecordType</maml:name>
+          <maml:Description>
+            <maml:para>The record type of the record.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">SOA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A_AAAA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AAAA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AFSDB</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ALL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ANY</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CNAME</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DHCID</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DNAME</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DNSKEY</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HINFO</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ISDN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MB</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MD</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MF</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MG</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MINFO</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MR</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MX</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC3PARAM</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OPT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PTR</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RP</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RRSIG</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SRV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">TXT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UNKNOWN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">WINS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">WKS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">X25</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">BindRecordType</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecordType</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TTL">
+          <maml:name>TimeToLive</maml:name>
+          <maml:Description>
+            <maml:para>The TTL of the record.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>New-BindRecord</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Record</maml:name>
+          <maml:Description>
+            <maml:para>A bind zone formatted record to convert to a record object.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>BindZone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to append the record to.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>BindZone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to append the record to.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Comment</maml:name>
+        <maml:Description>
+          <maml:para>A commend for the record.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>HostName</maml:name>
+        <maml:Description>
+          <maml:para>The host name of the record.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Record</maml:name>
+        <maml:Description>
+          <maml:para>A bind zone formatted record to convert to a record object.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RecordClass</maml:name>
+        <maml:Description>
+          <maml:para>The record class of the record.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RecordData</maml:name>
+        <maml:Description>
+          <maml:para>The record data of the record.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RecordType</maml:name>
+        <maml:Description>
+          <maml:para>The record type of the record.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecordType</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecordType</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TTL">
+        <maml:name>TimeToLive</maml:name>
+        <maml:Description>
+          <maml:para>The TTL of the record.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Multiple</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Record = New-BindRecord 'www 600 IN A 127.0.0.1'</dev:code>
+        <dev:remarks>
+          <maml:para>Create a new record for www.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; New-BindRecord 'www 600 IN A 127.0.0.1' -BindZone $Zone</dev:code>
+        <dev:remarks>
+          <maml:para>Create a new record for www and append to the zone object contained in $Zone.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Record = New-BindRecord -HostName 'www' -TimeToLive 600 -RecordType 'A' -RecordData '127.0.0.1'</dev:code>
+        <dev:remarks>
+          <maml:para>Create a new record for www.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-BindZone</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>BindZone</command:noun>
+      <maml:description>
+        <maml:para>Create a bind zone object</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create a bind zone object</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Origin</maml:name>
+          <maml:Description>
+            <maml:para>The zone origin for the zone object.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Records</maml:name>
+          <maml:Description>
+            <maml:para>The bind record objects to append to the zone.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Origin</maml:name>
+        <maml:Description>
+          <maml:para>The zone origin for the zone object.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Records</maml:name>
+        <maml:Description>
+          <maml:para>The bind record objects to append to the zone.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Zone = New-BindZone -Origin 'contoso.com.'</dev:code>
+        <dev:remarks>
+          <maml:para>Create a new zone object for contoso.com.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-BindRecordFromZone</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>BindRecordFromZone</command:noun>
+      <maml:description>
+        <maml:para>Remove a record object from a zone object</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Remove a record object from a zone object</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-BindRecordFromZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Zone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to modify.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+          <maml:name>Record</maml:name>
+          <maml:Description>
+            <maml:para>The record object(s) to remove from the zone.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
+        <maml:name>Record</maml:name>
+        <maml:Description>
+          <maml:para>The record object(s) to remove from the zone.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Zone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to modify.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Void</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Zone | Where-Object RecordType -eq MX | Remove-BindRecordFromZone -Zone $Zone</dev:code>
+        <dev:remarks>
+          <maml:para>Remove all MX records from the zone object $Zone.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-BindRecord</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>BindRecord</command:noun>
+      <maml:description>
+        <maml:para>Modify a record object</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Modify a record object</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-BindRecord</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>Record</maml:name>
+          <maml:Description>
+            <maml:para>The record object(s) to modify.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>HostName</maml:name>
+          <maml:Description>
+            <maml:para>Modify the record host name.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="TTL">
+          <maml:name>TimeToLive</maml:name>
+          <maml:Description>
+            <maml:para>Modify the record TTL</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>RecordClass</maml:name>
+          <maml:Description>
+            <maml:para>Modify the record class.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
+          <maml:name>RecordType</maml:name>
+          <maml:Description>
+            <maml:para>Modify the record type.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">SOA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A_AAAA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AAAA</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">AFSDB</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ALL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ANY</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CNAME</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DHCID</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DNAME</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DNSKEY</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">HINFO</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ISDN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MB</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MD</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MF</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MG</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MINFO</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MR</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MX</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NSEC3PARAM</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NULL</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OPT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PTR</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RP</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RRSIG</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SRV</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">TXT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UNKNOWN</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">WINS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">WKS</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">X25</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">BindRecordType</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecordType</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none">
+          <maml:name>RecordData</maml:name>
+          <maml:Description>
+            <maml:para>Modify the record data.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="6" aliases="none">
+          <maml:name>Comment</maml:name>
+          <maml:Description>
+            <maml:para>Modify the record comment.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Put modified records on the pipeline.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="6" aliases="none">
+        <maml:name>Comment</maml:name>
+        <maml:Description>
+          <maml:para>Modify the record comment.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>HostName</maml:name>
+        <maml:Description>
+          <maml:para>Modify the record host name.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:Description>
+          <maml:para>Put modified records on the pipeline.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>Record</maml:name>
+        <maml:Description>
+          <maml:para>The record object(s) to modify.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>RecordClass</maml:name>
+        <maml:Description>
+          <maml:para>Modify the record class.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none">
+        <maml:name>RecordData</maml:name>
+        <maml:Description>
+          <maml:para>Modify the record data.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
+        <maml:name>RecordType</maml:name>
+        <maml:Description>
+          <maml:para>Modify the record type.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecordType</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecordType</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="TTL">
+        <maml:name>TimeToLive</maml:name>
+        <maml:Description>
+          <maml:para>Modify the record TTL</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; $Zone | Where-Object RecordType -eq A | Set-BindRecord -TimeToLive 600</dev:code>
+        <dev:remarks>
+          <maml:para>Set all A records to have a TTL of 10 minutes.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Test-BindZone</command:name>
+      <command:verb>Test</command:verb>
+      <command:noun>BindZone</command:noun>
+      <maml:description>
+        <maml:para>Test a zone</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Test a zone against common issues</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Test-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:Description>
+            <maml:para>The literal path to the zone file.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Test-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>The path to the zone file.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Test-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Zone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to test.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone[]</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+        <maml:name>LiteralPath</maml:name>
+        <maml:Description>
+          <maml:para>The literal path to the zone file.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>The path to the zone file.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Zone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to test.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone[]</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Boolean</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Test-BindZone -Path '.\contoso.com.zone'</dev:code>
+        <dev:remarks>
+          <maml:para>Test the zone contained in the contoso.com.zone file.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Test-BindZone $Zone</dev:code>
+        <dev:remarks>
+          <maml:para>Test the zone object contained in the $Zone variable.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>
