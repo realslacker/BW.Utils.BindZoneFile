@@ -1,6 +1,13 @@
 # BW.Utils.BindZoneFile
 Read and write Bind zone files in pure PowerShell
 
+## Installing
+This module can be installed directly from the gallery.
+
+```powershell
+PS> Install-Module BW.Utils.BindZoneFile -Force
+```
+
 ## Example Usage
 
 ### Example Zone
