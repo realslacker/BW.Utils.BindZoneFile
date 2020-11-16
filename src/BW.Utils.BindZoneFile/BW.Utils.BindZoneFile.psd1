@@ -12,7 +12,7 @@
 RootModule = 'BW.Utils.BindZoneFile.psm1'
 
 # Version number of this module.
-ModuleVersion = '20.11.16.1506'
+ModuleVersion = '20.11.16.1600'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -96,13 +96,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = 'Bind', 'DNS'
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://raw.githubusercontent.com/realslacker/BW.Utils.BindZoneFile/main/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/realslacker/BW.Utils.BindZoneFile'
 
         # A URL to an icon representing this module.
         # IconUri = ''
