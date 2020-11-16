@@ -5,9 +5,9 @@ function New-BindRecord {
     [CmdletBinding( DefaultParameterSetName='FromString' )]
     param (
 
-        [Parameter( Mandatory, Position=1, ParameterSetName='FromString' )]
+        [Parameter( Mandatory, Position=1, ValueFromPipeline, ParameterSetName='FromString' )]
         [ValidateNotNullOrEmpty()]
-        [BindRecord]
+        [BindRecord[]]
         $Record,
 
         [Parameter( Mandatory, ParameterSetName='FromParams' )]
@@ -49,27 +49,31 @@ function New-BindRecord {
 
     )
 
-    if ( $PSCmdlet.ParameterSetName -eq 'FromParams' ) {
+    process {
 
-        $RecordHashtable = @{}
+        if ( $PSCmdlet.ParameterSetName -eq 'FromParams' ) {
 
-        $PSBoundParameters.Keys |
-            Where-Object { [BindRecord]::IsValidRecordProperty( $_ ) } |
-            ForEach-Object { $RecordHashtable[$_] = $PSBoundParameters[$_] }
+            $RecordHashtable = @{}
 
-        $Record = [BindRecord]$RecordHashtable
+            $PSBoundParameters.Keys |
+                Where-Object { [BindRecord]::IsValidRecordProperty( $_ ) } |
+                ForEach-Object { $RecordHashtable[$_] = $PSBoundParameters[$_] }
 
-    }
+            $Record = [BindRecord]$RecordHashtable
 
-    if ( $BindZone ) {
+        }
 
-        $BindZone.Add( $Record ) > $null
+        if ( $BindZone -is [BindZone] ) {
 
-    }
+            $BindZone.AddRange( $Record ) > $null
+
+        }
     
-    if ( -not $BindZone -or $PassThru ) {
-        
-        return $Record
+        if ( -not $BindZone -or $PassThru ) {
+            
+            return $Record
+
+        }
 
     }
 
@@ -232,7 +236,7 @@ function New-BindZone {
 
     }
 
-    return $BindZone
+    return , $BindZone
 
 }
 
@@ -351,60 +355,30 @@ function Test-BindZone {
     param (
 
         [Parameter( Mandatory, Position=1, ParameterSetName='Zone' )]
-        [BindZone[]]
+        [BindZone]
         $Zone,
 
         [Parameter( Mandatory, Position=1, ValueFromPipeline, ValueFromPipelineByPropertyName, ParameterSetName='Path' )]
         [ValidateNotNullOrEmpty()]
-        [string[]]
+        [string]
         $Path,
      
         [Parameter( Mandatory, ValueFromPipelineByPropertyName, ParameterSetName='LiteralPath' )]
         [ValidateNotNullOrEmpty()]
         [Alias('PSPath')]
-        [string[]]
-        $LiteralPath  
+        [string]
+        $LiteralPath
     
     )
 
-    begin {
-
-        $ReturnValue = $true
-
-    }
-
     process {
 
-        $Path = switch ( $PSCmdlet.ParameterSetName ) {
-            'Path'          { Resolve-Path -Path $Path }
-            'LiteralPath'   { Resolve-Path -LiteralPath $LiteralPath | Convert-Path }
+        switch ( $PSCmdlet.ParameterSetName ) {
+            'Path'          { $Zone = Resolve-Path -Path $Path | Convert-Path }
+            'LiteralPath'   { $Zone = Resolve-Path -LiteralPath $LiteralPath | Convert-Path }
         }
 
-        $Zone = [BindZone[]]$Path
-
-        foreach ( $ZoneItem in $Zone ) {
-
-            if ( $ZoneItem.Origin ) {
-
-                $ZoneName = $ZoneItem.Origin
-
-            } else {
-
-                $ZoneName = 'UNDEFINED'
-
-            }
-
-            Write-Verbose "Checking zone $ZoneName..."
-
-            if ( [BindZone]::HasErrors( $ZoneItem ) -and $ReturnValue ) { $ReturnValue = $false }
-
-        }
-
-    }
-
-    end {
-
-        return $ReturnValue
+        return [BindZone]::HasErrors( $Zone )
 
     }
 
