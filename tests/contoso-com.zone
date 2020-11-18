@@ -1,0 +1,14 @@
+$ORIGIN contoso.com.
+@   3600  IN  SOA  ns1-205.azure-dns.com. azuredns-hostmaster.microsoft.com. 1 3600 300 2419200 300
+@  43200  IN  NS   ns3-205.azure-dns.org.
+@  43200  IN  NS   ns4-205.azure-dns.info.
+@  43200  IN  NS   ns2-205.azure-dns.net.
+@  43200  IN  NS   ns1-205.azure-dns.com.
+@   3600  IN  MX   10 contoso-com.mail.protection.outlook.com. ; using Office 365
+@   3600  IN  A    40.76.4.15
+@   3600  IN  A    40.112.72.205
+@   3600  IN  A    40.113.200.201
+@   3600  IN  A    104.215.148.63
+@   3600  IN  A    13.77.161.179
+@   3600  IN  TXT  "MS=ms47806392" ; Microsoft verification for Office 365
+@    600  IN  TXT  "v=spf1 include:spf.protection.outlook.com -all"

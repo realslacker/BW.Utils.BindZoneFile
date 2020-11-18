@@ -36,21 +36,6 @@ Import the contoso.com.zone file to a zone object.
 
 ## PARAMETERS
 
-### -LiteralPath
-The literal path to the zone file.
-
-```yaml
-Type: String[]
-Parameter Sets: LiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -Path
 The literal path to the zone file.
 
@@ -63,6 +48,21 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -LiteralPath
+The literal path to the zone file.
+
+```yaml
+Type: String[]
+Parameter Sets: LiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

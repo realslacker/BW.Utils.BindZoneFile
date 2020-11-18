@@ -15,8 +15,8 @@
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Add-BindRecordToZone</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>Zone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+          <maml:name>BindZone</maml:name>
           <maml:Description>
             <maml:para>The zone object to modify.</maml:para>
           </maml:Description>
@@ -27,8 +27,8 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
-          <maml:name>Record</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="Record">
+          <maml:name>BindRecord</maml:name>
           <maml:Description>
             <maml:para>The record(s) to add to the zone.</maml:para>
           </maml:Description>
@@ -65,8 +65,8 @@
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Add-BindRecordToZone</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>Zone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+          <maml:name>BindZone</maml:name>
           <maml:Description>
             <maml:para>The zone object to modify.</maml:para>
           </maml:Description>
@@ -77,58 +77,8 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
-          <maml:name>Record</maml:name>
-          <maml:Description>
-            <maml:para>The record(s) to add to the zone.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
-          <dev:type>
-            <maml:name>BindRecord[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>AtIndex</maml:name>
-          <maml:Description>
-            <maml:para>Causes the added record(s) to be inserted at the index supplied to this parameter.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-          <dev:type>
-            <maml:name>Int32</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PassThru</maml:name>
-          <maml:Description>
-            <maml:para>Pass through the record(s) to the pipeline for further manipulation.</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-      </command:syntaxItem>
-      <command:syntaxItem>
-        <maml:name>Add-BindRecordToZone</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>Zone</maml:name>
-          <maml:Description>
-            <maml:para>The zone object to modify.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
-          <dev:type>
-            <maml:name>BindZone</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
-          <maml:name>Record</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="Record">
+          <maml:name>BindRecord</maml:name>
           <maml:Description>
             <maml:para>The record(s) to add to the zone.</maml:para>
           </maml:Description>
@@ -163,12 +113,98 @@
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Add-BindRecordToZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+          <maml:name>BindZone</maml:name>
+          <maml:Description>
+            <maml:para>The zone object to modify.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <dev:type>
+            <maml:name>BindZone</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="Record">
+          <maml:name>BindRecord</maml:name>
+          <maml:Description>
+            <maml:para>The record(s) to add to the zone.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+          <dev:type>
+            <maml:name>BindRecord[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AtIndex</maml:name>
+          <maml:Description>
+            <maml:para>Causes the added record(s) to be inserted at the index supplied to this parameter.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>Pass through the record(s) to the pipeline for further manipulation.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
     </command:syntax>
     <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+        <maml:name>BindZone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to modify.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="Record">
+        <maml:name>BindRecord</maml:name>
+        <maml:Description>
+          <maml:para>The record(s) to add to the zone.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>After</maml:name>
         <maml:Description>
           <maml:para>Causes the added record(s) to be inserted after the record supplied to this parameter.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Before</maml:name>
+        <maml:Description>
+          <maml:para>Causes the added record(s) to be inserted before the record supplied to this parameter.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
         <dev:type>
@@ -189,18 +225,6 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>Before</maml:name>
-        <maml:Description>
-          <maml:para>Causes the added record(s) to be inserted before the record supplied to this parameter.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
-        <dev:type>
-          <maml:name>BindRecord</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>PassThru</maml:name>
         <maml:Description>
@@ -212,30 +236,6 @@
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
-        <maml:name>Record</maml:name>
-        <maml:Description>
-          <maml:para>The record(s) to add to the zone.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">BindRecord[]</command:parameterValue>
-        <dev:type>
-          <maml:name>BindRecord[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-        <maml:name>Zone</maml:name>
-        <maml:Description>
-          <maml:para>The zone object to modify.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
-        <dev:type>
-          <maml:name>BindZone</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
@@ -267,7 +267,7 @@
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>PS C:\&gt; $Zone = Import-BindZone '.\contoso.com.zone'
-PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1'</dev:code>
+PS C:\&gt; Add-BindRecordToZone -BindZone $Zone -Record 'www 600 IN A 127.0.0.1'</dev:code>
         <dev:remarks>
           <maml:para>Appends a www record to the end of the zone.</maml:para>
         </dev:remarks>
@@ -276,7 +276,7 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1'</de
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
         <dev:code>PS C:\&gt; $Zone = Import-BindZone '.\contoso.com.zone'
 PS C:\&gt; $MxRecord = $Zone | Where-Object RecordType -eq MX | Select-Object -First 1
-PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Before $MxRecord</dev:code>
+PS C:\&gt; Add-BindRecordToZone -BindZone $Zone -Record 'www 600 IN A 127.0.0.1' -Before $MxRecord</dev:code>
         <dev:remarks>
           <maml:para>Adds a new A record before the first MX record.</maml:para>
         </dev:remarks>
@@ -299,8 +299,8 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Export-BindZone</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>Zone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+          <maml:name>BindZone</maml:name>
           <maml:Description>
             <maml:para>The zone object to export.</maml:para>
           </maml:Description>
@@ -326,6 +326,18 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+        <maml:name>BindZone</maml:name>
+        <maml:Description>
+          <maml:para>The zone object to export.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <dev:type>
+          <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Path</maml:name>
         <maml:Description>
@@ -334,18 +346,6 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
           <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-        <maml:name>Zone</maml:name>
-        <maml:Description>
-          <maml:para>The zone object to export.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
-        <dev:type>
-          <maml:name>BindZone</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -379,7 +379,7 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Export-BindZone -Zone $Zone -Path '.\contoso.com.zone'</dev:code>
+        <dev:code>PS C:\&gt; Export-BindZone -BindZone $Zone -Path '.\contoso.com.zone'</dev:code>
         <dev:remarks>
           <maml:para>Exports a Bind zone to a zone file</maml:para>
         </dev:remarks>
@@ -402,21 +402,6 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Import-BindZone</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
-          <maml:name>LiteralPath</maml:name>
-          <maml:Description>
-            <maml:para>The literal path to the zone file.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
-          <dev:type>
-            <maml:name>String[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-      </command:syntaxItem>
-      <command:syntaxItem>
-        <maml:name>Import-BindZone</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
           <maml:name>Path</maml:name>
           <maml:Description>
@@ -430,10 +415,25 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Import-BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:Description>
+            <maml:para>The literal path to the zone file.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
-        <maml:name>LiteralPath</maml:name>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
+        <maml:name>Path</maml:name>
         <maml:Description>
           <maml:para>The literal path to the zone file.</maml:para>
         </maml:Description>
@@ -444,8 +444,8 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
-        <maml:name>Path</maml:name>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+        <maml:name>LiteralPath</maml:name>
         <maml:Description>
           <maml:para>The literal path to the zone file.</maml:para>
         </maml:Description>
@@ -587,30 +587,21 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     <command:syntax>
       <command:syntaxItem>
         <maml:name>New-BindRecord</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>BindZone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Record</maml:name>
           <maml:Description>
-            <maml:para>The zone object to append the record to.</maml:para>
+            <maml:para>A bind zone formatted record to convert to a record object.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
           <dev:type>
-            <maml:name>BindZone</maml:name>
+            <maml:name>BindRecord</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>Comment</maml:name>
-          <maml:Description>
-            <maml:para>A commend for the record.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>New-BindRecord</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>HostName</maml:name>
           <maml:Description>
@@ -623,22 +614,22 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>RecordClass</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TTL">
+          <maml:name>TimeToLive</maml:name>
           <maml:Description>
-            <maml:para>The record class of the record.</maml:para>
+            <maml:para>The TTL of the record.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>Int32</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>RecordData</maml:name>
+          <maml:name>RecordClass</maml:name>
           <maml:Description>
-            <maml:para>The record data of the record.</maml:para>
+            <maml:para>The record class of the record.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -698,41 +689,26 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TTL">
-          <maml:name>TimeToLive</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>RecordData</maml:name>
           <maml:Description>
-            <maml:para>The TTL of the record.</maml:para>
+            <maml:para>The record data of the record.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
-            <maml:name>Int32</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-      </command:syntaxItem>
-      <command:syntaxItem>
-        <maml:name>New-BindRecord</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>Record</maml:name>
-          <maml:Description>
-            <maml:para>A bind zone formatted record to convert to a record object.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
-          <dev:type>
-            <maml:name>BindRecord</maml:name>
+            <maml:name>String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>BindZone</maml:name>
+          <maml:name>Comment</maml:name>
           <maml:Description>
-            <maml:para>The zone object to append the record to.</maml:para>
+            <maml:para>A commend for the record.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
-            <maml:name>BindZone</maml:name>
+            <maml:name>String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -740,26 +716,14 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>BindZone</maml:name>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Record</maml:name>
         <maml:Description>
-          <maml:para>The zone object to append the record to.</maml:para>
+          <maml:para>A bind zone formatted record to convert to a record object.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
         <dev:type>
-          <maml:name>BindZone</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>Comment</maml:name>
-        <maml:Description>
-          <maml:para>A commend for the record.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>BindRecord</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -776,14 +740,14 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-        <maml:name>Record</maml:name>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TTL">
+        <maml:name>TimeToLive</maml:name>
         <maml:Description>
-          <maml:para>A bind zone formatted record to convert to a record object.</maml:para>
+          <maml:para>The TTL of the record.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
         <dev:type>
-          <maml:name>BindRecord</maml:name>
+          <maml:name>Int32</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -792,18 +756,6 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         <maml:name>RecordClass</maml:name>
         <maml:Description>
           <maml:para>The record class of the record.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>RecordData</maml:name>
-        <maml:Description>
-          <maml:para>The record data of the record.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -824,14 +776,26 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="TTL">
-        <maml:name>TimeToLive</maml:name>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>RecordData</maml:name>
         <maml:Description>
-          <maml:para>The TTL of the record.</maml:para>
+          <maml:para>The record data of the record.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
-          <maml:name>Int32</maml:name>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Comment</maml:name>
+        <maml:Description>
+          <maml:para>A commend for the record.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -872,13 +836,6 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; New-BindRecord 'www 600 IN A 127.0.0.1' -BindZone $Zone</dev:code>
-        <dev:remarks>
-          <maml:para>Create a new record for www and append to the zone object contained in $Zone.</maml:para>
-        </dev:remarks>
-      </command:example>
-      <command:example>
-        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
         <dev:code>PS C:\&gt; $Record = New-BindRecord -HostName 'www' -TimeToLive 600 -RecordType 'A' -RecordData '127.0.0.1'</dev:code>
         <dev:remarks>
           <maml:para>Create a new record for www.</maml:para>
@@ -914,8 +871,8 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>Records</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Records">
+          <maml:name>BindRecords</maml:name>
           <maml:Description>
             <maml:para>The bind record objects to append to the zone.</maml:para>
           </maml:Description>
@@ -941,8 +898,8 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-        <maml:name>Records</maml:name>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Records">
+        <maml:name>BindRecords</maml:name>
         <maml:Description>
           <maml:para>The bind record objects to append to the zone.</maml:para>
         </maml:Description>
@@ -1005,8 +962,8 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Remove-BindRecordFromZone</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>Zone</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+          <maml:name>BindZone</maml:name>
           <maml:Description>
             <maml:para>The zone object to modify.</maml:para>
           </maml:Description>
@@ -1017,8 +974,8 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
-          <maml:name>Record</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="Record">
+          <maml:name>BindRecord</maml:name>
           <maml:Description>
             <maml:para>The record object(s) to remove from the zone.</maml:para>
           </maml:Description>
@@ -1032,26 +989,26 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none">
-        <maml:name>Record</maml:name>
-        <maml:Description>
-          <maml:para>The record object(s) to remove from the zone.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
-        <dev:type>
-          <maml:name>BindRecord</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-        <maml:name>Zone</maml:name>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="Zone">
+        <maml:name>BindZone</maml:name>
         <maml:Description>
           <maml:para>The zone object to modify.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">BindZone</command:parameterValue>
         <dev:type>
           <maml:name>BindZone</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="Record">
+        <maml:name>BindRecord</maml:name>
+        <maml:Description>
+          <maml:para>The record object(s) to remove from the zone.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">BindRecord</command:parameterValue>
+        <dev:type>
+          <maml:name>BindRecord</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -1085,7 +1042,7 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; $Zone | Where-Object RecordType -eq MX | Remove-BindRecordFromZone -Zone $Zone</dev:code>
+        <dev:code>PS C:\&gt; $Zone | Where-Object RecordType -eq MX | Remove-BindRecordFromZone -BindZone $Zone</dev:code>
         <dev:remarks>
           <maml:para>Remove all MX records from the zone object $Zone.</maml:para>
         </dev:remarks>
@@ -1380,9 +1337,9 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Test-BindZone</command:name>
+      <command:name>Test-BindZoneHasErrors</command:name>
       <command:verb>Test</command:verb>
-      <command:noun>BindZone</command:noun>
+      <command:noun>BindZoneHasErrors</command:noun>
       <maml:description>
         <maml:para>Test a zone</maml:para>
       </maml:description>
@@ -1392,7 +1349,7 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Test-BindZone</maml:name>
+        <maml:name>Test-BindZoneHasErrors</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
           <maml:name>LiteralPath</maml:name>
           <maml:Description>
@@ -1407,7 +1364,7 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Test-BindZone</maml:name>
+        <maml:name>Test-BindZoneHasErrors</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="none">
           <maml:name>Path</maml:name>
           <maml:Description>
@@ -1422,7 +1379,7 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Test-BindZone</maml:name>
+        <maml:name>Test-BindZoneHasErrors</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Zone</maml:name>
           <maml:Description>
@@ -1503,14 +1460,14 @@ PS C:\&gt; Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Be
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Test-BindZone -Path '.\contoso.com.zone'</dev:code>
+        <dev:code>PS C:\&gt; Test-BindZoneHasErrors -Path '.\contoso.com.zone'</dev:code>
         <dev:remarks>
           <maml:para>Test the zone contained in the contoso.com.zone file.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Test-BindZone $Zone</dev:code>
+        <dev:code>PS C:\&gt; Test-BindZoneHasErrors $Zone</dev:code>
         <dev:remarks>
           <maml:para>Test the zone object contained in the $Zone variable.</maml:para>
         </dev:remarks>

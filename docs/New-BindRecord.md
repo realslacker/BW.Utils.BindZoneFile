@@ -14,13 +14,13 @@ Create a new bind record object
 
 ### FromString (Default)
 ```
-New-BindRecord [-Record] <BindRecord> [-BindZone <BindZone>] [<CommonParameters>]
+New-BindRecord [-Record] <BindRecord> [<CommonParameters>]
 ```
 
 ### FromParams
 ```
 New-BindRecord -HostName <String> -TimeToLive <Int32> -RecordClass <String> -RecordType <BindRecordType>
- -RecordData <String> [-Comment <String>] [-BindZone <BindZone>] [<CommonParameters>]
+ -RecordData <String> [-Comment <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,13 +37,6 @@ Create a new record for www.
 
 ### Example 2
 ```powershell
-PS C:\> New-BindRecord 'www 600 IN A 127.0.0.1' -BindZone $Zone
-```
-
-Create a new record for www and append to the zone object contained in $Zone.
-
-### Example 3
-```powershell
 PS C:\> $Record = New-BindRecord -HostName 'www' -TimeToLive 600 -RecordType 'A' -RecordData '127.0.0.1'
 ```
 
@@ -51,31 +44,16 @@ Create a new record for www.
 
 ## PARAMETERS
 
-### -BindZone
-The zone object to append the record to.
+### -Record
+A bind zone formatted record to convert to a record object.
 
 ```yaml
-Type: BindZone
-Parameter Sets: (All)
+Type: BindRecord
+Parameter Sets: FromString
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Comment
-A commend for the record.
-
-```yaml
-Type: String
-Parameter Sets: FromParams
-Aliases:
-
-Required: False
-Position: Named
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -96,28 +74,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Record
-A bind zone formatted record to convert to a record object.
+### -TimeToLive
+The TTL of the record.
 
 ```yaml
-Type: BindRecord
-Parameter Sets: FromString
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RecordClass
-The record class of the record.
-
-```yaml
-Type: String
+Type: Int32
 Parameter Sets: FromParams
-Aliases:
+Aliases: TTL
 
 Required: True
 Position: Named
@@ -126,8 +89,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RecordData
-The record data of the record.
+### -RecordClass
+The record class of the record.
 
 ```yaml
 Type: String
@@ -157,15 +120,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TimeToLive
-The TTL of the record.
+### -RecordData
+The record data of the record.
 
 ```yaml
-Type: Int32
+Type: String
 Parameter Sets: FromParams
-Aliases: TTL
+Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Comment
+A commend for the record.
+
+```yaml
+Type: String
+Parameter Sets: FromParams
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -13,7 +13,7 @@ Remove a record object from a zone object
 ## SYNTAX
 
 ```
-Remove-BindRecordFromZone [-Zone] <BindZone> [-Record] <BindRecord> [<CommonParameters>]
+Remove-BindRecordFromZone [-BindZone] <BindZone> [-BindRecord] <BindRecord> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,40 +23,40 @@ Remove a record object from a zone object
 
 ### Example 1
 ```powershell
-PS C:\> $Zone | Where-Object RecordType -eq MX | Remove-BindRecordFromZone -Zone $Zone
+PS C:\> $Zone | Where-Object RecordType -eq MX | Remove-BindRecordFromZone -BindZone $Zone
 ```
 
 Remove all MX records from the zone object $Zone.
 
 ## PARAMETERS
 
-### -Record
-The record object(s) to remove from the zone.
-
-```yaml
-Type: BindRecord
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Zone
+### -BindZone
 The zone object to modify.
 
 ```yaml
 Type: BindZone
 Parameter Sets: (All)
-Aliases:
+Aliases: Zone
 
 Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BindRecord
+The record object(s) to remove from the zone.
+
+```yaml
+Type: BindRecord
+Parameter Sets: (All)
+Aliases: Record
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 

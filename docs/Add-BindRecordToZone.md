@@ -14,24 +14,24 @@ Add a Bind record to a Bind zone object
 
 ### Default (Default)
 ```
-Add-BindRecordToZone [-Zone] <BindZone> [-Record] <BindRecord[]> [-PassThru] [<CommonParameters>]
+Add-BindRecordToZone [-BindZone] <BindZone> [-Record] <BindRecord[]> [-PassThru] [<CommonParameters>]
 ```
 
 ### After
 ```
-Add-BindRecordToZone [-Zone] <BindZone> [-Record] <BindRecord[]> -After <BindRecord> [-PassThru]
+Add-BindRecordToZone [-BindZone] <BindZone> [-Record] <BindRecord[]> -After <BindRecord> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### Before
 ```
-Add-BindRecordToZone [-Zone] <BindZone> [-Record] <BindRecord[]> -Before <BindRecord> [-PassThru]
+Add-BindRecordToZone [-BindZone] <BindZone> [-Record] <BindRecord[]> -Before <BindRecord> [-PassThru]
  [<CommonParameters>]
 ```
 
 ### AtIndex
 ```
-Add-BindRecordToZone [-Zone] <BindZone> [-Record] <BindRecord[]> -AtIndex <Int32> [-PassThru]
+Add-BindRecordToZone [-BindZone] <BindZone> [-Record] <BindRecord[]> -AtIndex <Int32> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -43,7 +43,7 @@ Add a Bind record to a Bind zone object
 ### Example 1
 ```powershell
 PS C:\> $Zone = Import-BindZone '.\contoso.com.zone'
-PS C:\> Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1'
+PS C:\> Add-BindRecordToZone -BindZone $Zone -Record 'www 600 IN A 127.0.0.1'
 ```
 
 Appends a www record to the end of the zone.
@@ -52,12 +52,42 @@ Appends a www record to the end of the zone.
 ```powershell
 PS C:\> $Zone = Import-BindZone '.\contoso.com.zone'
 PS C:\> $MxRecord = $Zone | Where-Object RecordType -eq MX | Select-Object -First 1
-PS C:\> Add-BindRecordToZone -Zone $Zone -Record 'www 600 IN A 127.0.0.1' -Before $MxRecord
+PS C:\> Add-BindRecordToZone -BindZone $Zone -Record 'www 600 IN A 127.0.0.1' -Before $MxRecord
 ```
 
 Adds a new A record before the first MX record.
 
 ## PARAMETERS
+
+### -BindZone
+The zone object to modify.
+
+```yaml
+Type: BindZone
+Parameter Sets: (All)
+Aliases: Zone
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BindRecord
+The record(s) to add to the zone.
+
+```yaml
+Type: BindRecord[]
+Parameter Sets: (All)
+Aliases: Record
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -After
 Causes the added record(s) to be inserted after the record supplied to this parameter.
@@ -65,21 +95,6 @@ Causes the added record(s) to be inserted after the record supplied to this para
 ```yaml
 Type: BindRecord
 Parameter Sets: After
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AtIndex
-Causes the added record(s) to be inserted at the index supplied to this parameter.
-
-```yaml
-Type: Int32
-Parameter Sets: AtIndex
 Aliases:
 
 Required: True
@@ -104,6 +119,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AtIndex
+Causes the added record(s) to be inserted at the index supplied to this parameter.
+
+```yaml
+Type: Int32
+Parameter Sets: AtIndex
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
 Pass through the record(s) to the pipeline for further manipulation.
 
@@ -114,36 +144,6 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Record
-The record(s) to add to the zone.
-
-```yaml
-Type: BindRecord[]
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Zone
-The zone object to modify.
-
-```yaml
-Type: BindZone
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
