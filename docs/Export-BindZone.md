@@ -13,7 +13,7 @@ Export a Bind zone object to a zone file
 ## SYNTAX
 
 ```
-Export-BindZone [-Zone] <BindZone> -Path <String> [<CommonParameters>]
+Export-BindZone [-BindZone] <BindZone> -Path <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,12 +23,27 @@ Export a Bind zone object to a zone file
 
 ### Example 1
 ```powershell
-PS C:\> Export-BindZone -Zone $Zone -Path '.\contoso.com.zone'
+PS C:\> Export-BindZone -BindZone $Zone -Path '.\contoso.com.zone'
 ```
 
 Exports a Bind zone to a zone file
 
 ## PARAMETERS
+
+### -BindZone
+The zone object to export.
+
+```yaml
+Type: BindZone
+Parameter Sets: (All)
+Aliases: Zone
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Path
 Path to export the zone to.
@@ -40,21 +55,6 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Zone
-The zone object to export.
-
-```yaml
-Type: BindZone
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

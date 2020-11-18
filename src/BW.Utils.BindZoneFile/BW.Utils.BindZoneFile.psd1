@@ -12,7 +12,7 @@
 RootModule = 'BW.Utils.BindZoneFile.psm1'
 
 # Version number of this module.
-ModuleVersion = '20.11.16.1600'
+ModuleVersion = '20.11.18.1144'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -58,7 +58,7 @@ PowerShellVersion = '5.1'
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # NOTE: BindRecordClass.ps1 needs to load before BindZoneClass.ps1 as the object class needs to already be defined when the list class is loaded.
-ScriptsToProcess = 'classes\BindRecordTypeEnum.ps1', 'classes\BindRecordClass.ps1', 'classes\BindZoneClass.ps1'
+# ScriptsToProcess = 'classes\BindRecordTypeEnum.ps1', 'classes\BindRecordClass.ps1', 'classes\BindZoneClass.ps1'
 
 # Type files (.ps1xml) to be loaded when importing this module
 # TypesToProcess = @()

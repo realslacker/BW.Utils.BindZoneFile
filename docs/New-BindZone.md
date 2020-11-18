@@ -13,7 +13,7 @@ Create a bind zone object
 ## SYNTAX
 
 ```
-New-BindZone [-Origin] <String> [[-Records] <BindRecord[]>] [<CommonParameters>]
+New-BindZone [-Origin] <String> [[-BindRecords] <BindRecord[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,13 +45,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Records
+### -BindRecords
 The bind record objects to append to the zone.
 
 ```yaml
 Type: BindRecord[]
 Parameter Sets: (All)
-Aliases:
+Aliases: Records
 
 Required: False
 Position: 1

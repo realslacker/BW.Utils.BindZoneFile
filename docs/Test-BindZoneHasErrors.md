@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Test-BindZone
+# Test-BindZoneHasErrors
 
 ## SYNOPSIS
 Test a zone
@@ -14,17 +14,17 @@ Test a zone
 
 ### Zone
 ```
-Test-BindZone [-Zone] <BindZone[]> [<CommonParameters>]
+Test-BindZoneHasErrors [-Zone] <BindZone[]> [<CommonParameters>]
 ```
 
 ### Path
 ```
-Test-BindZone [-Path] <String[]> [<CommonParameters>]
+Test-BindZoneHasErrors [-Path] <String[]> [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Test-BindZone -LiteralPath <String[]> [<CommonParameters>]
+Test-BindZoneHasErrors -LiteralPath <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,14 +34,14 @@ Test a zone against common issues
 
 ### Example 1
 ```powershell
-PS C:\> Test-BindZone -Path '.\contoso.com.zone'
+PS C:\> Test-BindZoneHasErrors -Path '.\contoso.com.zone'
 ```
 
 Test the zone contained in the contoso.com.zone file.
 
 ### Example 2
 ```powershell
-PS C:\> Test-BindZone $Zone
+PS C:\> Test-BindZoneHasErrors $Zone
 ```
 
 Test the zone object contained in the $Zone variable.

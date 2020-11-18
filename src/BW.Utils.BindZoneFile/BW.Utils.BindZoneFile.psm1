@@ -1,4 +1,9 @@
-﻿# .ExternalHelp BW.Utils.BindZoneFile-help.xml
+﻿using namespace System.IO
+using namespace System.Collections.Generic
+using module '.\classes\BindRecordClass.psm1'
+using module '.\classes\BindZoneClass.psm1'
+
+# .ExternalHelp BW.Utils.BindZoneFile-help.xml
 function New-BindRecord {
 
     [OutputType( [BindRecord] )]
@@ -39,13 +44,7 @@ function New-BindRecord {
 
         [Parameter( ParameterSetName='FromParams' )]
         [string]
-        $Comment,
-
-        [BindZone]
-        $BindZone,
-
-        [switch]
-        $PassThru
+        $Comment
 
     )
 
@@ -55,25 +54,20 @@ function New-BindRecord {
 
             $RecordHashtable = @{}
 
+            $ValidProperties = [BindRecord].
+                GetMembers().
+                Where({ $_.MemberType -eq 'Property' }).
+                Name
+
             $PSBoundParameters.Keys |
-                Where-Object { [BindRecord]::IsValidRecordProperty( $_ ) } |
+                Where-Object { $_ -in $ValidProperties } |
                 ForEach-Object { $RecordHashtable[$_] = $PSBoundParameters[$_] }
 
             $Record = [BindRecord]$RecordHashtable
 
         }
-
-        if ( $BindZone -is [BindZone] ) {
-
-            $BindZone.AddRange( $Record ) > $null
-
-        }
-    
-        if ( -not $BindZone -or $PassThru ) {
-            
-            return $Record
-
-        }
+        
+        return $Record
 
     }
 
@@ -159,23 +153,12 @@ function Import-BindZone {
 
     process {
 
-        $ZoneFilePaths = switch ( $PSCmdlet.ParameterSetName ) {
-            'Path'          { Resolve-Path -Path $Path }
-            'LiteralPath'   { Resolve-Path -LiteralPath $LiteralPath | Convert-Path }
-        }
+        Get-Item @PSBoundParameters |
+            ForEach-Object {
 
-        $ZoneFilePaths | ForEach-Object {
+                return , [BindZone]$_
 
-            if ( -not( Test-path $_ -PathType Leaf ) ) {
-                
-                Write-Error ( 'Path must be a zone file!' )
-                return
-            
             }
-
-            return , [BindZone]::new( $_ )
-
-        }
 
     }
 
@@ -190,8 +173,9 @@ function Export-BindZone {
     param(
 
         [Parameter( Mandatory, Position=1 )]
+        [Alias( 'Zone' )]
         [BindZone]
-        $Zone,
+        $BindZone,
 
         [Parameter( Mandatory )]
         [ValidateNotNullOrEmpty()]
@@ -202,7 +186,7 @@ function Export-BindZone {
 
     $Path = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( $Path )
 
-    $Zone.SaveAs( $Path ) | Out-Null
+    $BindZone.SaveAs( $Path ) | Out-Null
 
 }
 
@@ -220,19 +204,19 @@ function New-BindZone {
         [string]
         $Origin,
 
+        [Alias( 'Records' )]
         [BindRecord[]]
-        $Records
+        $BindRecords
 
     )
 
-    if ( $Records ) {
+    if ( $BindRecords ) {
 
-        $BindZone = [BindZone]::new( $Records, $Origin )
+        $BindZone = [BindZone]::new( $Origin, $BindRecords )
 
     } else {
 
-        $BindZone = [BindZone]::new()
-        $BindZone.Origin = $Origin
+        $BindZone = [BindZone]::new( $Origin )
 
     }
 
@@ -248,12 +232,14 @@ function Add-BindRecordToZone {
     param (
 
         [Parameter( Mandatory, Position=1 )]
+        [Alias( 'Zone' )]
         [BindZone]
-        $Zone,
+        $BindZone,
 
         [Parameter( Mandatory, Position=2, ValueFromPipeline )]
+        [Alias( 'Record' )]
         [BindRecord[]]
-        $Record,
+        $BindRecord,
 
         [Parameter( Mandatory, ParameterSetName='After' )]
         [BindRecord]
@@ -274,13 +260,13 @@ function Add-BindRecordToZone {
 
     begin {
 
-        $Records = [System.Collections.Generic.List[BindRecord]]::new()
+        $Records = [List[BindRecord]]::new()
 
     }
 
     process {
 
-        $Records.AddRange( $Record )
+        $Records.AddRange( $BindRecord )
 
     }
 
@@ -288,13 +274,13 @@ function Add-BindRecordToZone {
 
         if ( $After ) {
 
-            $AtIndex = $Zone.IndexOf( $After ) + 1
+            $AtIndex = $BindZone.IndexOf( $After ) + 1
 
         }
 
         if ( $Before ) {
 
-            $AtIndex = $Zone.IndexOf( $Before )
+            $AtIndex = $BindZone.IndexOf( $Before )
 
         }
         
@@ -302,11 +288,11 @@ function Add-BindRecordToZone {
 
             Write-Verbose "Inserting at index $AtIndex"
 
-            $Zone.InsertRange( $AtIndex, $Records )
+            $BindZone.InsertRange( $AtIndex, $Records )
 
         } else {
 
-            $Zone.AddRange( $Records )
+            $BindZone.AddRange( $Records )
 
         }
 
@@ -325,20 +311,22 @@ function Remove-BindRecordFromZone {
     param (
 
         [Parameter( Mandatory, Position=1 )]
+        [Alias( 'Zone' )]
         [BindZone]
-        $Zone,
+        $BindZone,
 
         [Parameter( Mandatory, Position=2, ValueFromPipeline )]
+        [Alias( 'Record' )]
         [BindRecord]
-        $Record
+        $BindRecord
     
     )
 
     process {
 
-        $Record | ForEach-Object {
+        $BindRecord | ForEach-Object {
 
-            $Zone.Remove( $_ ) | Out-Null
+            $BindZone.Remove( $_ ) | Out-Null
 
         }
 
@@ -348,15 +336,16 @@ function Remove-BindRecordFromZone {
 
 
 # .ExternalHelp BW.Utils.BindZoneFile-help.xml
-function Test-BindZone {
+function Test-BindZoneHasErrors {
 
     [OutputType( [bool] )]
     [CmdletBinding()]
     param (
 
         [Parameter( Mandatory, Position=1, ParameterSetName='Zone' )]
+        [Alias( 'Zone' )]
         [BindZone]
-        $Zone,
+        $BindZone,
 
         [Parameter( Mandatory, Position=1, ValueFromPipeline, ValueFromPipelineByPropertyName, ParameterSetName='Path' )]
         [ValidateNotNullOrEmpty()]
@@ -373,12 +362,17 @@ function Test-BindZone {
 
     process {
 
-        switch ( $PSCmdlet.ParameterSetName ) {
-            'Path'          { $Zone = Resolve-Path -Path $Path | Convert-Path }
-            'LiteralPath'   { $Zone = Resolve-Path -LiteralPath $LiteralPath | Convert-Path }
+        if ( $PSCmdlet.ParameterSetName -ne 'Zone' ) {
+
+            $BindZone = Get-Item @PSBoundParameters
+
         }
 
-        return [BindZone]::HasErrors( $Zone )
+        $Errors = $BindZone.GetErrors()
+
+        $Errors | ForEach-Object { Write-Warning $_ }
+
+        return $Errors.Count -gt 0
 
     }
 
@@ -392,11 +386,12 @@ function Invoke-BindZoneSort {
     param (
 
         [Parameter( Mandatory, Position=1 )]
+        [Alias( 'Zone' )]
         [BindZone]
-        $Zone
+        $BindZone
 
     )
 
-    $Zone.Sort()
+    $BindZone.Sort()
 
 }
