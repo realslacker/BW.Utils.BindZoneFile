@@ -186,7 +186,7 @@ function Export-BindZone {
 
     $Path = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath( $Path )
 
-    $BindZone.SaveAs( $Path ) | Out-Null
+    $BindZone.Export( $Path ) | Out-Null
 
 }
 
