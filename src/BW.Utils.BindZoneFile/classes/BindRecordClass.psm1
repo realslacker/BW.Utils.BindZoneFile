@@ -47,7 +47,7 @@ class BindRecord:IComparable {
     [ValidateRange( 60, [int]::MaxValue )]
     [System.Nullable[int]]$TimeToLive
 
-    [string]$RecordClass
+    hidden [string]$RecordClass__
     
     [System.Nullable[BindRecordType]]$RecordType
     
@@ -55,9 +55,14 @@ class BindRecord:IComparable {
     
     [string]$Comment
 
-    BindRecord () {}
+    BindRecord () {
+
+        $this.__InitObject()
+    }
 
     BindRecord ( [string]$Record ) {
+
+        $this.__InitObject()
 
         if ( $Record -match '^(?<HostName>\S+)\s+(?<TimeToLive>\d+)\s+(?<RecordClass>\S+)\s+(?<RecordType>\S+)\s+(?<RecordData>"[^"]*"|[^;]+)\s*;?\s*(?<Comment>.*)$' ) {
         
@@ -73,24 +78,55 @@ class BindRecord:IComparable {
 
     BindRecord ( [pscustomobject]$Record ) {
 
+        $this.__InitObject()
+
         $this.__InitRecord( $Record )
+    
+    }
+
+    hidden [void] __InitObject () {
+
+        $this | Add-Member -MemberType ScriptProperty -Name 'RecordClass' -Value {
+            
+            return $this.RecordClass__
+        
+        } -SecondValue {
+            
+            param( [string]$Value )
+            
+            $this.RecordClass__ = $Value.ToUpper()
+        
+        }
+
+        [string[]]$DefaultProperties = 'HostName', 'TimeToLive', 'RecordClass', 'RecordType', 'RecordData', 'Comment'
+
+        $DefaultDisplayPropertySet = [System.Management.Automation.PSPropertySet]::new( 'DefaultDisplayPropertySet', $DefaultProperties )
+
+        $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]$DefaultDisplayPropertySet
+
+        $this | Add-Member -MemberType MemberSet -Name 'PSStandardMembers' -Value $PSStandardMembers
     
     }
 
     hidden [void] __InitRecord ( [pscustomobject] $Record ) {
 
-        $ValidProperties = [BindRecord].
-            GetMembers().
-            Where({ $_.MemberType -eq 'Property' }).
-            Name
+        $ValidProperties = ( $this | Get-Member -MemberType Property, ScriptProperty ).Name
 
         $Record.
             PSObject.
             Members.
             Where({$_.MemberType -eq 'NoteProperty' -and $_.Name -in $ValidProperties -and -not [string]::IsNullOrEmpty( $_.Value ) }).
-            Foreach({ $this.($_.Name) = ([string]$_.Value).Trim() })
+            Foreach({
+                
+                $this.($_.Name) = ([string]$_.Value).Trim()
+            
+            })
 
-        if ( -not $this.RecordClass ) { $this.RecordClass = 'IN' }
+        if ( -not $this.RecordClass ) {
+            
+            $this.RecordClass = 'IN'
+        
+        }
 
     }
 

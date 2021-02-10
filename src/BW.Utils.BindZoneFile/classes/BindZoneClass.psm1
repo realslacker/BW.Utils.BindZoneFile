@@ -151,6 +151,15 @@ class BindZone:List[BindRecord] {
         }
 
         $this |
+            Group-Object 'HostName' |
+            Where-Object { ( $_.Group.RecordType.Where({ $_ -eq 'CNAME' -or $_ -eq 'TXT' }) | Select-Object -Unique ).Count -gt 1 } |
+            ForEach-Object {
+
+                $Errors.Add( "Zone Error - Hostname '$($_.Name)' has conflicting record types, records may not have both a CNAME and a TXT record" )
+
+            }
+
+        $this |
             Where-Object RecordType -eq 'TXT' |
             Group-Object 'HostName' |
             Where-Object { ( $_.Group.TimeToLive | Select-Object -Unique ).Count -gt 1 } |
