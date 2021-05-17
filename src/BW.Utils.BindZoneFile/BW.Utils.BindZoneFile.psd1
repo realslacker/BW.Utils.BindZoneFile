@@ -12,7 +12,7 @@
 RootModule = 'BW.Utils.BindZoneFile.psm1'
 
 # Version number of this module.
-ModuleVersion = '21.2.10.1700'
+ModuleVersion = '21.5.17.924'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
