@@ -47,7 +47,7 @@ class BindRecord:IComparable {
     [ValidateRange( 60, [int]::MaxValue )]
     [System.Nullable[int]]$TimeToLive
 
-    hidden [string]$RecordClass__
+    [string]$RecordClass
     
     [System.Nullable[BindRecordType]]$RecordType
     
@@ -85,18 +85,6 @@ class BindRecord:IComparable {
     }
 
     hidden [void] __InitObject () {
-
-        $this | Add-Member -MemberType ScriptProperty -Name 'RecordClass' -Value {
-            
-            return $this.RecordClass__
-        
-        } -SecondValue {
-            
-            param( [string]$Value )
-            
-            $this.RecordClass__ = $Value.ToUpper()
-        
-        }
 
         [string[]]$DefaultProperties = 'HostName', 'TimeToLive', 'RecordClass', 'RecordType', 'RecordData', 'Comment'
 
@@ -138,7 +126,7 @@ class BindRecord:IComparable {
 
     [string] ToString ( [string]$Format ) {
 
-        $FormattedRecord = $Format -f $this.HostName, $this.TimeToLive, $this.RecordClass, $this.RecordType, $this.RecordData
+        $FormattedRecord = $Format -f $this.HostName, $this.TimeToLive, $this.RecordClass.ToUpper(), $this.RecordType.ToUpper(), $this.RecordData
 
         if ( [string]::IsNullOrWhiteSpace( $FormattedRecord ) -and -not [string]::IsNullOrWhiteSpace( $this.Comment ) ) {
             
