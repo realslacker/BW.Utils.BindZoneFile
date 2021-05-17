@@ -126,7 +126,7 @@ class BindRecord:IComparable {
 
     [string] ToString ( [string]$Format ) {
 
-        $FormattedRecord = $Format -f $this.HostName, $this.TimeToLive, $this.RecordClass.ToUpper(), $this.RecordType.ToUpper(), $this.RecordData
+        $FormattedRecord = $Format -f $this.HostName, $this.TimeToLive, $this.RecordClass.ToUpper(), $this.RecordType, $this.RecordData
 
         if ( [string]::IsNullOrWhiteSpace( $FormattedRecord ) -and -not [string]::IsNullOrWhiteSpace( $this.Comment ) ) {
             
