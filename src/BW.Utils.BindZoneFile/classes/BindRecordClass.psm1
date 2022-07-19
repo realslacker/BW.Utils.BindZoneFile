@@ -10,6 +10,7 @@ enum BindRecordType {
     AFSDB
     ALL
     ANY
+    CAA
     CNAME
     DHCID
     DNAME
@@ -196,11 +197,11 @@ class BindRecord:IComparable {
 
         # if all attributes are blank except a comment, then it's a valid comment
         if ( [string]::IsNullOrEmpty( $this.HostName ) -and 
-             $null -eq $this.TimeToLive -and 
-             [string]::IsNullOrEmpty( $this.RecordClass ) -and 
-             $null -eq $this.RecordType -and 
-             [string]::IsNullOrEmpty( $this.RecordData ) -and
-             -not [string]::IsNullOrEmpty( $this.Comment ) ) {
+            $null -eq $this.TimeToLive -and 
+            [string]::IsNullOrEmpty( $this.RecordClass ) -and 
+            $null -eq $this.RecordType -and 
+            [string]::IsNullOrEmpty( $this.RecordData ) -and
+            -not [string]::IsNullOrEmpty( $this.Comment ) ) {
 
                 return $Errors
             
@@ -244,6 +245,14 @@ class BindRecord:IComparable {
 
             $Errors.Add( 'RecordData is missing' )
 
+        }
+
+        # if the RecordType is CAA and the RecordData is not properly formatted then
+        # the record is invalid
+        if ( $this.RecordType -eq 'CAA' -and $this.RecordData -notmatch '^(\d|[1-9]\d|1[0-1]\d|12[0-8])\s+(issue|issuewild|iodef)\s+"[^"]+"$' ) {
+
+            $Errors.Add( 'RecordType is CAA, RecordData must be formatted as ''<Priority> <PropertyType> "<CAAControl>"''' )
+            
         }
 
         # if the RecordType is TXT and the RecordData is not enclosed in double quotes
