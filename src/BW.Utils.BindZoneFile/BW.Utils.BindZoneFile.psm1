@@ -44,7 +44,11 @@ function New-BindRecord {
 
         [Parameter( ParameterSetName='FromParams' )]
         [string]
-        $Comment
+        $Comment,
+
+        [Parameter( ParameterSetName='FromParams' )]
+        [switch]
+        $Enabled
 
     )
 

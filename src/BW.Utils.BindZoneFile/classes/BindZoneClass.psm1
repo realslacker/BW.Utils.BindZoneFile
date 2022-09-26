@@ -64,7 +64,7 @@ class BindZone:List[BindRecord] {
             #RecordData  = ( [string[]]$this.RecordData  | Measure-Object -Maximum -Property Length ).Maximum
         }
 
-        $Format = "{0,-$($ColumnWidths.HostName)}  {1,$($ColumnWidths.TimeToLive)}  {2,-$($ColumnWidths.RecordClass)}  {3,-$($ColumnWidths.RecordType)}  {4}"
+        $Format = "{5}{0,-$($ColumnWidths.HostName)}  {1,$($ColumnWidths.TimeToLive)}  {2,-$($ColumnWidths.RecordClass)}  {3,-$($ColumnWidths.RecordType)}  {4}"
 
         $Return = [List[string]]::new()
 
@@ -160,7 +160,7 @@ class BindZone:List[BindRecord] {
             }
 
         $this |
-            Where-Object RecordType -eq 'TXT' |
+            Where-Object { $_.RecordType -eq 'TXT' -and $_.Enabled } |
             Group-Object 'HostName' |
             Where-Object { ( $_.Group.TimeToLive | Select-Object -Unique ).Count -gt 1 } |
             ForEach-Object {

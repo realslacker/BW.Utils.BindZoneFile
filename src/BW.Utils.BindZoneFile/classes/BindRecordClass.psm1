@@ -41,6 +41,11 @@ enum BindRecordType {
     X25
 }
 
+enum BindRecordStatus {
+    Disabled = 0
+    Enabled  = 1
+}
+
 class BindRecord:IComparable {
 
     [string]$HostName
@@ -56,6 +61,8 @@ class BindRecord:IComparable {
     
     [string]$Comment
 
+    [BindRecordStatus]$Status = [BindRecordStatus]::Enabled
+
     BindRecord () {
 
         $this.__InitObject()
@@ -65,7 +72,9 @@ class BindRecord:IComparable {
 
         $this.__InitObject()
 
-        if ( $Record -match '^(?<HostName>\S+)\s+(?<TimeToLive>\d+)\s+(?<RecordClass>\S+)\s+(?<RecordType>\S+)\s+(?<RecordData>"[^"]*"|[^;]+)\s*;?\s*(?<Comment>.*)$' ) {
+        if ( $Record -match '^(?<Enabled>;+\s*)?(?<HostName>\S+)\s+(?<TimeToLive>\d+)\s+(?<RecordClass>\S+)\s+(?<RecordType>\S+)\s+(?<RecordData>"[^"]*"|[^;]+)\s*;?\s*(?<Comment>.*)$' ) {
+
+            $Matches.Status = [string]::IsNullOrEmpty($Matches.Enabled) -as [int]
         
             $this.__InitRecord( [pscustomobject]$Matches )
         
@@ -87,7 +96,7 @@ class BindRecord:IComparable {
 
     hidden [void] __InitObject () {
 
-        [string[]]$DefaultProperties = 'HostName', 'TimeToLive', 'RecordClass', 'RecordType', 'RecordData', 'Comment'
+        [string[]]$DefaultProperties = 'HostName', 'TimeToLive', 'RecordClass', 'RecordType', 'RecordData', 'Comment', 'Status'
 
         $DefaultDisplayPropertySet = [System.Management.Automation.PSPropertySet]::new( 'DefaultDisplayPropertySet', $DefaultProperties )
 
@@ -104,30 +113,30 @@ class BindRecord:IComparable {
         $Record.
             PSObject.
             Members.
-            Where({$_.MemberType -eq 'NoteProperty' -and $_.Name -in $ValidProperties -and -not [string]::IsNullOrEmpty( $_.Value ) }).
+            Where({
+                $_.MemberType -eq 'NoteProperty' -and
+                $_.Name -in $ValidProperties -and
+                -not [string]::IsNullOrEmpty( $_.Value )
+            }).
             Foreach({
-                
                 $this.($_.Name) = ([string]$_.Value).Trim()
-            
             })
 
         if ( -not $this.RecordClass ) {
-            
             $this.RecordClass = 'IN'
-        
         }
 
     }
 
     [string] ToString () {
     
-        return $this.ToString( '{0}  {1}  {2}  {3}  {4}' )
+        return $this.ToString( '{5}{0}  {1}  {2}  {3}  {4}' )
     
     }
 
     [string] ToString ( [string]$Format ) {
 
-        $FormattedRecord = $Format -f $this.HostName, $this.TimeToLive, $this.RecordClass.ToUpper(), $this.RecordType, $this.RecordData
+        $FormattedRecord = $Format -f $this.HostName, $this.TimeToLive, $this.RecordClass.ToUpper(), $this.RecordType, $this.RecordData, (';;','')[$this.Status]
 
         if ( [string]::IsNullOrWhiteSpace( $FormattedRecord ) -and -not [string]::IsNullOrWhiteSpace( $this.Comment ) ) {
             
