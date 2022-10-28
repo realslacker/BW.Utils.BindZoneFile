@@ -178,6 +178,14 @@ class BindRecord:IComparable {
         if ( $this.RecordType -eq 'SOA' -and $that.RecordType -ne 'SOA' ) { return -1 }
         if ( $this.RecordType -ne 'SOA' -and $that.RecordType -eq 'SOA' ) { return 1 }
 
+        # @ records are always first
+        if ( $this.HostName -eq '@' -and $that.HostName -ne '@' ) { return -1 }
+        if ( $this.HostName -ne '@' -and $that.HostName -eq '@' ) { return 1 }
+
+        # * records are always next
+        if ( $this.HostName -eq '*' -and $that.HostName -ne '*' ) { return -1 }
+        if ( $this.HostName -ne '*' -and $that.HostName -eq '*' ) { return 1 }
+        
         # now we sort by host name
         if ( $this.HostName -lt $that.HostName ) { return -1 }
         if ( $this.HostName -gt $that.HostName ) { return 1 }
