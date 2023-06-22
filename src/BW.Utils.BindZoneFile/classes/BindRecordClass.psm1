@@ -163,8 +163,15 @@ class BindRecord:IComparable {
         $this.
             PSObject.
             Members.
-            Where({ $_.MemberType -eq 'Property' -and $_.Value -ne $that.($_.Name) }).
-            ForEach({ $IsEqual = $false })
+            Where({
+                $_.MemberType -eq 'Property' -and
+                $_.Name -ne 'Comment' -and
+                [string]::Compare( $_.Value, $that.($_.Name), [StringComparison]::Ordinal ) -ne 0
+            }).
+            ForEach({
+                Write-Verbose ( 'Property {0} is not equal.' -f $_.Name )
+                $IsEqual = $false
+            })
 
         return $IsEqual
 
