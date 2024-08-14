@@ -23,7 +23,7 @@ function New-BindRecord {
         [Parameter( Mandatory, ParameterSetName='FromParams' )]
         [Alias( 'TTL' )]
         [ValidateNotNullOrEmpty()]
-        [int]
+        [UInt32]
         $TimeToLive,
 
         [Parameter( Mandatory, ParameterSetName='FromParams' )]
@@ -94,7 +94,7 @@ function Set-BindRecord {
 
         [Alias( 'TTL' )]
         [ValidateNotNullOrEmpty()]
-        [int]
+        [UInt32]
         $TimeToLive,
 
         [ArgumentCompleter( {'IN'} )]
@@ -355,7 +355,7 @@ function Test-BindZoneHasErrors {
         [ValidateNotNullOrEmpty()]
         [string]
         $Path,
-     
+
         [Parameter( Mandatory, ValueFromPipelineByPropertyName, ParameterSetName='LiteralPath' )]
         [ValidateNotNullOrEmpty()]
         [Alias('PSPath')]
