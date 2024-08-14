@@ -50,8 +50,7 @@ class BindRecord:IComparable {
 
     [string]$HostName
 
-    [ValidateRange( 60, [int]::MaxValue )]
-    [System.Nullable[int]]$TimeToLive
+    [System.Nullable[UInt32]]$TimeToLive
 
     [string]$RecordClass
     
